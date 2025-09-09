@@ -13,7 +13,7 @@ int main() {
     Valores *p;
     int *X;
     p = (Valores *) malloc(sizeof(Valores));
-    X = (int *) malloc(sizeof(X));
+    X = (int *) malloc(p->N*sizeof(int));
     cin >> p->N;
     p->M=1000; 
     p->P=1000;
