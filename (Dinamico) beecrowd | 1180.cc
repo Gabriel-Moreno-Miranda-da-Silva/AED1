@@ -27,5 +27,6 @@ int main() {
     cout << "Menor valor: "<< p->M << '\n';
     cout << "Posicao: "<< p->P << '\n';
     free(p);
+    free(X);
     return 0;
 }
