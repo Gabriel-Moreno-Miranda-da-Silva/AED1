@@ -6,12 +6,14 @@ using namespace std;
 int main()
 {
 	string F;
-	int i = 0;
-	while(!feof(iostream)) {
-	    cin >> F ;
-	    int n = 0;
-	    int R = 0;
-		for( ; i < F.length();i++){
+
+    //o loop dura enquanto tiver linhas para ler
+	while (getline(cin, F))
+	{
+	    // n é o contador que verifica se há parenteses abertos ou fechados, "(": +1 , ")": -1
+		int n = 0;
+		int R = 0;
+		for(int i = 0 ; i < F.length(); i++) {
 			if (n<0) {
 				R = 1;
 				break;
@@ -22,19 +24,14 @@ int main()
 			if (F[i]==')') {
 				n--;
 			}
-			if (F[i]=='\n') {
-				break;
-			}
 		}
-		if(n>0 || R == 1) {
+		if (n != 0 || R == 1) {
 			cout << "incorrect" << '\n';
 		}
-		if(n=0 || R == 0) {
+		else {
 			cout << "correct" << '\n';
 		}
-		
-	} 
-	cout << F;
+	}
 
 	return 0;
 }
